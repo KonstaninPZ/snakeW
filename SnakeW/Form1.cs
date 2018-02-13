@@ -27,16 +27,28 @@ namespace SnakeW
         public void initGame()
         {
             snake = new Snake();
-            Timer timer1 = new Timer();
-            timer1.Interval = 1000;
-           // timer1.Tick += new EventHandler(moveSnake_Tick);
+
+           Timer timer1 = createTimer();
             timer1.Start();
+            
         }
+        private Timer createTimer()
+        {
+            System.Windows.Forms.Timer timerKeepTrack = new System.Windows.Forms.Timer();
+            timerKeepTrack.Interval = 1000;
+            timerKeepTrack.Tick+= new EventHandler(moveSnake_Tick);
+            
+            return timerKeepTrack;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            moveSnake_Tick();
-            Graphics g = Graphics.FromHwnd(Handle);
-            g.DrawRectangle(SystemPens.ActiveBorder, new Rectangle(10, 10, ClientSize.Width - 20, ClientSize.Height - 20));
+            // MoveSnake.moveDown(snake);
+            MoveSnake.moveLeft(snake);
+            Invalidate();
+
+            //Graphics g = Graphics.FromHwnd(Handle);
+            //g.DrawRectangle(SystemPens.ActiveBorder, new Rectangle(10, 10, ClientSize.Width - 20, ClientSize.Height - 20));
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -63,18 +75,33 @@ namespace SnakeW
             }
         }
 
-        private void moveSnake_Tick()
+        private void moveSnake_Tick(object sender, System.EventArgs e)
         {
-            foreach (var item in snake.bodySnake)
-            {
-                item.X += 16;
-                //item.Y += 16;
-            }
+            //foreach (var item in snake.bodySnake)
+            //{
+            //    item.X += 16;
+            //    //item.Y += 16;
+            //}
             Invalidate();
         }
+
         private void Form1_Resize(object sender, EventArgs e)
         {
             Invalidate();
+        }
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // if(e.KeyCod == e.KeyChar.)
+            //button1.Text = e.KeyChar.ToString();
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down)
+            {
+               
+            }
         }
     }
 }
