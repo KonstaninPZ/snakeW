@@ -7,3 +7,12 @@ D:\ProjectC#\SnakeW\SnakeW\obj\Debug\SnakeW.csproj.GenerateResource.Cache
 D:\ProjectC#\SnakeW\SnakeW\obj\Debug\SnakeW.exe
 D:\ProjectC#\SnakeW\SnakeW\obj\Debug\SnakeW.pdb
 D:\ProjectC#\SnakeW\SnakeW\obj\Debug\SnakeW.Form1.resources
+D:\Project C#\SnakeW\SnakeW\obj\Debug\SnakeW.csprojResolveAssemblyReference.cache
+D:\Project C#\SnakeW\SnakeW\obj\Debug\SnakeW.Form1.resources
+D:\Project C#\SnakeW\SnakeW\obj\Debug\SnakeW.Properties.Resources.resources
+D:\Project C#\SnakeW\SnakeW\obj\Debug\SnakeW.csproj.GenerateResource.Cache
+D:\Project C#\SnakeW\SnakeW\obj\Debug\SnakeW.exe
+D:\Project C#\SnakeW\SnakeW\obj\Debug\SnakeW.pdb
+D:\Project C#\SnakeW\SnakeW\bin\Debug\SnakeW.exe.config
+D:\Project C#\SnakeW\SnakeW\bin\Debug\SnakeW.exe
+D:\Project C#\SnakeW\SnakeW\bin\Debug\SnakeW.pdb

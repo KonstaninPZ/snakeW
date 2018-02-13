@@ -27,10 +27,14 @@ namespace SnakeW
         public void initGame()
         {
             snake = new Snake();
+            Timer timer1 = new Timer();
+            timer1.Interval = 1000;
+           // timer1.Tick += new EventHandler(moveSnake_Tick);
+            timer1.Start();
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            moveSnake_Tick();
             Graphics g = Graphics.FromHwnd(Handle);
             g.DrawRectangle(SystemPens.ActiveBorder, new Rectangle(10, 10, ClientSize.Width - 20, ClientSize.Height - 20));
         }
@@ -46,15 +50,27 @@ namespace SnakeW
             //e.Graphics.DrawString(HELLO_WORLD, Font, SystemBrushes.WindowText, p);
             //// e.Graphics.DrawLine(SystemPens.WindowText, 10, 10, 20, 20);
             //e.Graphics.FillPolygon(SystemBrushes.Window, points);
-
+            writeCellSnake(e);
             
         }
-        private void writeCellSnake()
+
+        private void writeCellSnake(PaintEventArgs e)
         {
             foreach (var item in snake.bodySnake)
             {
-                item.X[]
+                PointF[] pointsOfSnake = { new PointF(item.X, item.Y),new PointF(item.X + 16, item.Y),new PointF(item.X+16, item.Y+16), new PointF(item.X , item.Y+16) };
+                e.Graphics.FillPolygon(SystemBrushes.Window, pointsOfSnake);
             }
+        }
+
+        private void moveSnake_Tick()
+        {
+            foreach (var item in snake.bodySnake)
+            {
+                item.X += 16;
+                //item.Y += 16;
+            }
+            Invalidate();
         }
         private void Form1_Resize(object sender, EventArgs e)
         {
